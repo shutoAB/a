@@ -4,13 +4,12 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-	return render_template('HTML_3.html',  title="Form sample",  message="お名前は？")
+	return render_template('login.html',  title="Form sample",  message="お名前は？")
 
 @app.route('/', methods=['POST'])
 def form():
 	field = request.form['field']
-	return render_template('test.html', title="Form sample",  message="こんにちは、%s さん！" % field)
-
+	return render_template('login.html', title="Form sample",  message="こんにちは、%s さん！" % field)
 
 if __name__ == '__main__':
 	app.debug = True

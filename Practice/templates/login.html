@@ -1,0 +1,23 @@
+<html lang="ja">
+<font color="red" font-family: Roboto, Arial, sans-serif>
+    <head>
+    <meta charset="utf-8">
+    <title>フォームの作成</title>
+    <body>
+        <div>
+            <form method="post" action="welcome.html">
+            <h1><center>アカウント作成</center></h1>
+            <p>ID(10文字以内)</p>
+                <input type="text" maxlength="8" id="name">
+            <p>性別</p>
+                <input id="male" type="radio" name="sex" value="male"><label for="male">男性</label>
+                <input id="female" type="radio" name="sex" value="female"><label for="female">女性</label>
+            <p>年齢</p>
+                <input type="number" min="0" max="150" placeholder="20" id="age">
+            <p>花粉歴</p>
+                <input type="number" min="0" max="100" placeholder="5" id="po">
+            <p><input type="submit" value="会員登録を行う"></p>
+            </form>
+        </div>
+    </body>
+</html>
