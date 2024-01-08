@@ -1,0 +1,19 @@
+<body>
+    <h1>検索した地点</h1>
+
+    {% if city_map %}
+        <h2>{{ city_map.display_name }}</h2>
+    {% endif %}
+</body>
+
+<h2>{{ place | safe }} の天気予報は</h2>
+<p>
+    気温: {{temperature | safe }} ℃ ,
+    天気: {{description | safe }} ,
+    湿度: {{humidity | safe }} m/s
+</p>
+
+<p>
+    他の地点を検索したい場合は以下の「他の地点で検索」をクリック
+</p>
+<a href="other">他の地点で検索</a><br>
