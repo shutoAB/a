@@ -1,0 +1,30 @@
+<html lang="ja">
+    <h4>ようこそ、{{ name | safe }} さん</h4>
+    <h3>あなたのお気に入り地点は {{ place | safe }} です。</h3>
+    <p>緯度：{{ lat }}, 経度：{{ lon }}</p>
+        
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>City Map</title>
+    </head>
+    <body>
+        <h1>地図</h1>
+    
+        {% if city_map %}
+            <h2>{{ city_map.display_name }}</h2>
+            <iframe width="500" height="400" frameborder="0" scrolling="no"
+                    marginheight="50" marginwidth="50" src="https://www.openstreetmap.org/export/embed.html?bbox={{ city_map.boundingbox[2] }}%2C{{ city_map.boundingbox[0] }}%2C{{ city_map.boundingbox[3] }}%2C{{ city_map.boundingbox[1] }}&amp;layer=mapnik"></iframe>
+        {% endif %}
+    </body>
+
+    <body>
+        <h1>現在の気象情報</h1>
+        <p>天気: {{ description | safe }}</p>
+        <p>気温: {{ temperature | safe }} ℃</p>
+        <p>湿度: {{ humidity | safe }} %</p>
+        </body>
+
+    <p>他の地点を検索したい場合は以下の「他の地点で検索」をクリック</p>
+    <a href="other">他の地点で検索</a><br>
+</html>
